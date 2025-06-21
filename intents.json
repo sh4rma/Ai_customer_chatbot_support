@@ -1,0 +1,49 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening", "yo", "what's up"],
+      "responses": ["Hello! How can I assist you today?", "Hi there! How can I help you?", "Greetings! What can I do for you?"]
+    },
+    {
+      "tag": "order_status",
+      "patterns": ["where is my order", "order status", "track my order", "order tracking", "when will my order arrive"],
+      "responses": ["Please provide your order ID, and I will check the status for you.", "Can you share your order number to track it?", "I can help track your order. What's your order ID?"]
+    },
+    {
+      "tag": "return_policy",
+      "patterns": ["what is your return policy", "how do I return a product", "return process", "can I return an item"],
+      "responses": ["You can return products within 30 days of delivery. Would you like me to guide you through the process?", "Our return policy allows returns within 30 days. Let me know if you need help with a return."]
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": ["what payment methods do you accept", "can I pay with credit card", "payment options", "do you accept paypal"],
+      "responses": ["We accept credit cards, debit cards, PayPal, and net banking.", "You can pay using credit/debit cards, PayPal, or net banking."]
+    },
+    {
+      "tag": "technical_support",
+      "patterns": ["my app is not working", "technical issue", "can't login", "error message", "app crashing"],
+      "responses": ["I'm sorry to hear that. Can you please describe the issue in detail?", "Please try restarting the app. If the problem persists, let me know the error message."]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "see you later", "goodbye", "tata", "end", "see ya", "talk to you later"],
+      "responses": ["Goodbye! If you need further assistance, feel free to reach out.", "See you later! Have a great day!", "Bye! We're here if you need any more help."]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "that's helpful", "I appreciate it", "much obliged"],
+      "responses": ["You're welcome!", "Happy to help!", "Anytime!", "My pleasure!"]
+    },
+    {
+      "tag": "help",
+      "patterns": ["can you help me", "I need help", "help me", "I have a question", "can you answer something"],
+      "responses": ["Sure, I am here to help. What do you need?", "Absolutely! What can I assist you with?", "Go ahead, I'm listening."]
+    },
+    {
+      "tag": "not_understood",
+      "patterns": ["what", "huh", "???", "you there", "are you working", "why no response"],
+      "responses": ["I'm here! Could you rephrase that?", "Sorry, I didn't get that. Try again.", "Let's try that one more time."]
+    }
+  ]
+}

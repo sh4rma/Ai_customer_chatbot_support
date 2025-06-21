@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ai Chatbot</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+    .chat-box { width: 400px; margin: auto; background: white; padding: 10px; border-radius: 10px; }
+    .chat-log { height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    .message { margin: 5px 0; }
+    .user { font-weight: bold; color: blue; }
+    .bot { font-weight: bold; color: green; }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <h2>Ai Chatbot</h2>
+    <p style="font-size: small; color: rgb(18, 17, 17);">Made by Hritik Sharma </p>
+    <div class="chat-log" id="chat-log"></div>
+    <input type="text" id="user-input" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    async function sendMessage() {
+      const input = document.getElementById("user-input");
+      const chatLog = document.getElementById("chat-log");
+      const userMessage = input.value;
+
+      if (userMessage.trim() === "") return;
+
+      chatLog.innerHTML += `<div class="message user">You: ${userMessage}</div>`;
+      input.value = "";
+
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: userMessage })
+      });
+
+      const data = await response.json();
+      chatLog.innerHTML += `<div class="message bot">Bot: ${data.response}</div>`;
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+  </script>
+</body>
+</html>
